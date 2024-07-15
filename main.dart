@@ -29,7 +29,7 @@ void menu(){
                 
                double valor1 = double.tryParse(entradaValor1) ?? 0.0;
                double valor2 = double.tryParse(entradavalor2) ?? 0.0;
-               
+                print('Opção $opcao, valor 1 $valor1, valor 2 $valor2');
              }catch(e){
 
               throw Exception('ERRO! $entradaValor1 ou $entradavalor2 não podem ser convertidos');
