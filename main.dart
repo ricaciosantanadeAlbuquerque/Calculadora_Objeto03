@@ -29,8 +29,10 @@ void main(){
 
     int opcao = int.parse(entradaOp);
 
-      if ( opcao > 0 &&  opcao < 6) {       // tratando o intervalo de valores válidos
+     if(opcao == 5)  exit(0); // como é só uma linha de código não há nescessidade de abrir o escopo da estrutura if()
 
+      if ( opcao > 0 &&  opcao < 6) {       // tratando o intervalo de valores válidos
+        
         print('Digite o primeiro valor');
         String? entradaValor1 = stdin.readLineSync();
         print('Digite o segundo valor');
