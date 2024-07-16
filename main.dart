@@ -2,17 +2,29 @@ import 'dart:io';
 
 import 'calculadora.dart';
 void main(){
-  var result = menu();
+  String? opcao = 'sim';
+  print('=============== CALCULADORA =============== ');
+  print('Seja bem vinda !!!');
 
-  if(result.soma != null){
-   print('Soma:${result.soma}');
-  }else if(result.subtracao != null){
-   print('Subtração ${result.subtracao}');
-  }else if(result.multiplicacao != null){
-   print('multiplicacao:${result.multiplicacao}');
-  }else if(result.divisao != null){
-   print('Divisão:${result.divisao}');
-  }
+  do{
+
+     var result = menu();
+
+    if (result.soma != null) {
+      print('Soma:${result.soma}');
+    } else if (result.subtracao != null) {
+      print('Subtração ${result.subtracao}');
+    } else if (result.multiplicacao != null) {
+      print('multiplicacao:${result.multiplicacao}');
+    } else if (result.divisao != null) {
+      print('Divisão:${result.divisao}');
+    }
+
+    print('Você Deseja continuar ? digite [sim] ou [não]');
+    opcao = stdin.readLineSync();
+  }while(opcao!.toLowerCase() == 'sim');
+
+  print('=============== FIM ===============');
 
 }
 
