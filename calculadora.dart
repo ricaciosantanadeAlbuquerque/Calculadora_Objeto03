@@ -6,11 +6,11 @@ class Calculadora implements InterfaceCalculadora{
   double? _valor1;
   double? _valor2;
 
-  Calculadora({required int op,required double valor1,required double valo2}){
+  Calculadora({required int op,required double valor1,required double valor2}){
     this.op = op;
     this.valor1 = valor1;
     this.valor2 = valor2;
-    escolha(op:op,valor1: valor1,valor2: valo2);
+    escolha(op:op,valor1: valor1,valor2: valor2);
   }
 
 
@@ -26,15 +26,20 @@ class Calculadora implements InterfaceCalculadora{
    void escolha({required int op,required double valor1,required double valor2}){
         switch(op){
           case 1:
+          soma = somaValor(valor1: valor1, valor2: valor2);
           break;
           case 2:
+          subtracao = subtracaoValor(valor1: valor1,valor2: valor2);
           break;
           case 3:
+          multiplicacao = multiplicacaoValor(valor1: valor1, valor2: valor2);
           break;
           case 4:
+          divisao = divisaoValor(valor1:valor1,valor2:valor2);
           break;
           case 5:
-          break;
+          print('O programa será encerrado !!!');
+          exit(0);
           default:
           print('ERRO! valor fora da faixa.\n O programa será encerrado');
           exit(0);
