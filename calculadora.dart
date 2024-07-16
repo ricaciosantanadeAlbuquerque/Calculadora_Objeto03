@@ -1,6 +1,7 @@
 import 'dart:io';
+import 'interface_calculadora.dart';
 
-class Calculadora{
+class Calculadora implements InterfaceCalculadora{
   int? _op;
   double? _valor1;
   double? _valor2;
@@ -42,5 +43,35 @@ class Calculadora{
 
    @override
    String toString() => 'Opção $op, Valor 1: $valor1, Valor 2: $valor2';
+
+  // interface
+  @override
+  double? soma;
+  @override
+  double? subtracao;
+  @override
+  double? multiplicacao;
+  @override
+  double? divisao;
+  
+  @override
+  double somaValor({required double valor1,required double valor2}){
+    return  valor1 + valor2;
+  }
+
+  @override
+  double subtracaoValor({required double valor1,required double valor2}){
+    return valor1 - valor2;
+  }
+
+  @override
+  double multiplicacaoValor({required double valor1,required double valor2}){
+    return valor1 * valor2;
+  }
+
+  @override
+  double divisaoValor({required double valor1,required double valor2}){
+    return valor1 / valor2;
+  }
 
 }
